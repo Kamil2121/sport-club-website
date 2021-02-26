@@ -1,0 +1,756 @@
+html,body
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/*-----------------------START---------------------*/
+
+header nav{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.nav-logo{
+    color: azure;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+}
+
+.nav-logo:hover{
+  text-decoration: none;
+  color: azure;
+}
+
+.nav-logo img{
+  width: 100px;
+  height: 100px;
+}
+
+.nav-links{
+    display: flex;
+    margin-left: 200px;
+    color: azure;
+    justify-content: space-around;
+    width: 40%;
+    font-size: 18px;
+    letter-spacing: 1px;
+    list-style: none;
+}
+
+.nav-links li a{
+    color: azure;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+.nav-links li a:hover{
+  text-decoration: none;
+  color: red;
+}
+
+.nav-burger{
+    display: none;
+}
+
+.nav-burger div{
+    width: 25px;
+    height: 3px;
+    background-color: azure;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1280px){
+    .nav-links{
+        margin-left: 0px;
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:1127px){
+    .nav-links{
+      width: 60%;
+    }
+    .nav-logo span{
+        display: none;
+    }
+}
+
+@media screen and (max-width:834px){
+    body{
+        overflow-x: hidden;
+    }
+    header nav{
+        height: 8vh;
+        background-color: deepskyblue;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        margin-top: 0;
+        background-color: deepskyblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-logo img{
+        display: none;
+    }
+    .nav-logo span{
+      display: inline;
+      font-size: 25px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .nav-burger{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 2vh;
+        cursor: pointer;
+    }
+}
+
+.nav-active-burger{
+    transform: translateX(0%);
+}
+
+.nav-active{
+  background-color: deepskyblue;
+  box-shadow: 0px 0px 17px 0px;
+  transition: all 0.5s ease-in;
+}
+
+.nav-scroll
+{
+  background-color: deepskyblue;
+  box-shadow: 0px 0px 17px 0px;
+  transition: all 0.5s ease-in;
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/*-----------------------KLUB---------------------*/
+.intro-area
+{
+  position: relative;
+  padding: 130px 0px;
+  text-align: center;
+}
+
+.sub-heading
+{
+  position: relative;
+  margin-bottom: 75px;
+}
+
+.sub-heading:before
+{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -3%;
+  width: 6%;
+  height: 1px;
+  background-color: deepskyblue;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+
+.sub-heading:hover:before
+{
+  width: 24%;
+  margin-left: -12%;
+}
+
+.sub-heading:after
+{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12%;
+  width: 24%;
+  height: 1px;
+  background-color: #e1e1e1;
+}
+
+.sub-heading p
+{
+  color: #818181;
+  display: inline-block;
+  padding: 0px 0px 20px;
+  position: relative;
+  line-height: 24px;
+  letter-spacing: 0.025em;
+}
+
+p.p-intro-block
+{
+  color: black;
+  margin-bottom: 100px;
+}
+
+/*-----------------------ROZGRYWKI---------------------*/
+/*Tabela1*/
+
+.feature-area {
+  padding: 130px 0px;
+}
+
+.button-category {
+  margin-bottom: 30px;
+}
+
+.button-category button {
+  text-transform: capitalize;
+  border: 3px solid deepskyblue;
+  padding: 20px 60px;
+  border-radius: 50px;
+  color: deepskyblue;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button-category button:hover {
+  background-color: deepskyblue;
+  color: white;
+}
+
+button.active {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.hideTab {
+  display: none;
+}
+
+.wynikMeczu {
+  text-align: center;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  width: 700px;
+  height: 400px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+}
+
+.table {
+    border-radius: 5px;
+    float: left;
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+}
+
+.table table {
+	width: 100%;
+	overflow: hidden;
+  border-radius: 5px;
+}
+
+.table table thead {
+	background: RGB(0,189,255);
+}
+
+.table table thead tr th {
+	line-height: 46px;
+	padding: 0 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.table table tbody tr:last-child {
+	border: 0px;
+}
+
+.table table tbody tr {
+	border-bottom: 1px solid #e1e1e1;
+	background: #fafafa;
+}
+
+.table table tbody tr td {
+	padding: 11px 10px 11px;
+	font-size: 14px;
+	color: #777777;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+}
+
+.table table tbody tr:nth-child(even) {
+	background-color: #f0f0f0;
+}
+
+.table table tbody tr:hover {
+	background-color: #ddd;
+}
+
+/*Tabela2*/
+
+.table2 {
+    float: left;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.table2 ul li {
+  display: list-item;
+}
+
+.table2 h5.title {
+    background: RGB(0,189,255);
+    color: #fff;
+    line-height: 51px;
+    text-align: center;
+    margin: 0px;
+    border-radius: 3px 3px 0 0;
+}
+
+.table2 .nmw-wrap {
+    border: 1px solid #e1e1e1;
+    border-top: 0px;
+    border-radius: 0 0px 3px 3px;
+    width: 100%;
+    float: left;
+}
+
+.match-teams-vs {
+    margin: 0;
+    padding: 40px 30px 20px;
+    list-style: none;
+    width: 100%;
+    float: left;
+}
+
+.match-teams-vs li {
+    float: left;
+    text-align: center;
+}
+
+.match-teams-vs li.team-logo {
+    width: 40%;
+}
+
+.match-teams-vs li.mvs {
+    width: 20%;
+}
+
+.match-teams-vs .vs {
+    background: #f0f0f0;
+    border: 1px solid #e1e1e1;
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 15px;
+    color: RGB(0,189,255);
+    margin: 20px 0 0;
+}
+
+.match-teams-vs .vs2 {
+    display: inline-block;
+    font-size: 100px;
+    line-height: 60px;
+    padding: 0 15px;
+    border-radius: 15px;
+    color: black;
+    margin: 20px 0 0;
+}
+
+.match-teams-vs li.team-logo strong {
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    color: #222222;
+    font-weight: 400;
+    margin: 10px 0 0;
+}
+
+.match-teams-vs li.team-logo strong.str {
+  font-size: 70px;
+}
+
+.nmw-txt {
+    text-align: center;
+    margin: 0 0 30px;
+    padding: 0px;
+    list-style: none;
+    clear: both;
+}
+
+.nmw-txt li {
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+}
+
+.nmw-txt strong {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: RGB(0,189,255);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.nmw-txt span {
+    color: RGB(0,189,255);
+}
+
+
+.count-match {
+    display: flex;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;;
+    width: 100%;
+}
+
+.count-match div {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #e1e1e1;;
+}
+
+.count-match div:last-child {
+    border: 0;
+}
+
+.textcount {
+    display: block;
+    text-transform: uppercase;
+    color: #999999;
+    font-size: 12px;
+}
+
+.numcount {
+    color: #666666;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.buy-ticket {
+    clear: both;
+    text-align: center;
+    padding: 24px 0;
+}
+
+.buy-ticket a {
+    background: RGB(0,189,255);
+    color: #fff;
+    line-height: 40px;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.buy-ticket a:hover {
+    background: #171e36;
+    color: #fff;
+    text-decoration: none;
+}
+
+/*Tabela3*/
+
+.table span {
+    color: RGB(0,189,255);
+}
+
+/*-----------------------DRUŻYNA---------------------*/
+
+.team-area
+{
+  padding: 130px 0px;
+}
+
+.team-area .sub-heading
+{
+  margin-bottom: 100px;
+}
+
+.team-block
+{
+  margin-bottom: 100px;
+}
+
+.team-man
+{
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: -50px;
+  overflow: hidden;
+  min-height: 100px;
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  border: 10px solid deepskyblue;
+  border-radius: 50%;
+}
+
+.team-man img
+{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  border-radius: 35%;
+}
+
+.team-block h3
+{
+  color: deepskyblue;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 70px;
+  margin-bottom: 5px;
+}
+
+.team-block span
+{
+  color: #6c6c6c;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 0.025em;
+}
+
+.team-block p
+{
+  color: dimgrey;
+  font-size: 14px;
+  padding: 25px 15px;
+  line-height: 24px;
+}
+
+.team-description
+{
+  background-color: #f5f5f5;
+  border: 2px deepskyblue solid;
+}
+
+.team-social-network
+{
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.team-social-network a
+{
+  margin: 0 6px;
+}
+
+.team-social-network i
+{
+  height: 40px;
+  width: 40px;
+  background: white;
+  text-align: center;
+  color: deepskyblue;
+  border-radius: 50%;
+  border: 3px solid #c4e5f0;
+  padding-top: 10px;
+}
+
+.team-block
+{
+  text-align: center;
+  position: relative;
+}
+
+.team-block:hover .team-description
+{
+  background-color: deepskyblue;
+  color: white;
+  transition: .3s ease;
+}
+
+.team-block:hover .team-title h3,
+.team-block:hover .team-title span
+{
+  color: white;
+  transition: .4s ease;
+}
+
+.team-block:hover .team-description p
+{
+  color: #f9f9f9;
+  transition: 0.5s ease;
+}
+
+.team-block:hover .team-social-network i
+{
+  border-color: white;
+  background: deepskyblue;
+  color: white;
+  transition: .6s ease;
+}
+
+/*-----------------------GALERIA---------------------*/
+
+.gallery-area
+{
+  padding: 130px 0px;
+}
+
+.gallery
+{
+  margin: 10px 50px;
+}
+
+.gallery img
+{
+  transition: 1s;
+  padding: 15px;
+  width: 200px;
+}
+
+.gallery img:hover
+{
+  /*filter: grayscale(100%);*/
+  transform: scale(1.1);
+}
+
+/*-----------------------KONTAKT---------------------*/
+
+.contact-area
+{
+  padding: 130px 0;
+}
+
+.divider
+{
+  border-right: 1px solid #d9d9d9;
+}
+
+.contact-area h3
+{
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.contact-area h4
+{
+  color: #3a3a3a;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+  letter-spacing: 0.025em;
+}
+
+.contact-area span
+{
+  display: block;
+  color: #3a3a3a;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: 0.025em;
+}
+
+.contact-area ul li
+{
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.contact-area ul li:last-child
+{
+  margin-bottom: 0;
+}
+
+.contact-address ul li .fa
+{
+  float: left;
+  width: 25px;
+  color: deepskyblue;
+  font-size: 30px;
+  border-top: white solid 10px;
+}
+
+.contact-address ul li .address-phone
+{
+  float: left;
+  width: 180px;
+  padding-left: 25px;
+}
+
+.contact-block
+{
+  padding-left: 25px;
+}
+
+.contact-area .form-control, .contact-area textarea
+{
+  font-family: 'Roboto', sans-serif;
+  background: #f8fdff;
+  border: 1px solid #a5d3eb;
+  padding: 10px 12px;
+  color: black;
+  height: 45px;
+  font-weight: 400;
+  border-radius: 0;
+}
+
+.contact-area .form-group
+{
+  margin-bottom: 30px;
+}
+
+.contact-area textarea
+{
+  min-height: 115px;
+}
+
+.contact-area .default-btn
+{
+  padding: 10px;
+}
